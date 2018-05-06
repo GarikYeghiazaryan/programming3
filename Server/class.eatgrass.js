@@ -1,3 +1,4 @@
+var LivingCreature = require("./class.parent");
 module.exports = class Xotaker extends LivingCreature{
     constructor(x, y, energy) {
         super(x,y);
@@ -19,7 +20,7 @@ module.exports = class Xotaker extends LivingCreature{
     }
 
     sharjvel() {
-        var norVandak2 = random(this.yntrelVandak(0));
+        var norVandak2 = this.choose(this.yntrelVandak(0));
         if (norVandak2) {
             matrix[this.y][this.x] = 0;
             this.y = norVandak2[1];
@@ -35,7 +36,7 @@ module.exports = class Xotaker extends LivingCreature{
 
     utel() {
         this.stanalNorKordinatner();
-        var norVandak1 = random(this.yntrelVandak(1));
+        var norVandak1 = this.choose(this.yntrelVandak(1));
         if (norVandak1) {
             matrix[this.y][this.x] = 0;
             this.y = norVandak1[1];
@@ -58,7 +59,7 @@ module.exports = class Xotaker extends LivingCreature{
 
         this.stanalNorKordinatner();
 
-        var norVandak1 = random(this.yntrelVandak(0));
+        var norVandak1 = this.choose(this.yntrelVandak(0));
 
         if (norVandak1 && this.mahxot >= 5) {
             var norXotaker1 = new Xotaker(norVandak1[0], norVandak1[1]);

@@ -10,7 +10,10 @@ function setup() {
     background('#acacac');
    
 }
-io.sockets.on("mess",function (matrix) {
+
+var socket = io.connect('http://localhost:3000');
+
+socket.on("mish", function (matrix) {
 
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {

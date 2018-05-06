@@ -9,19 +9,25 @@ app.get("/", function(req, res){
    res.redirect("index.html");
 });
 
-app.listen(process.env.PORT || 3000, function(){
+server.listen(process.env.PORT || 3000, function(){
    console.log("Example is running on port 3000");
 });
 
+// console.log(matrix);
+
 //sad
-var matrix = [];
-var grassArr = [];
-var gish1Arr = [];
-var anhetacoxArr = [];
-var gishatichArr = [];
-var xotakerArr = [];
+matrix = [];
+grassArr = [];
+gish1Arr = [];
+anhetacoxArr = [];
+gishatichArr = [];
+xotakerArr = [];
 
 Grass = require("./class.grass");
+Xotaker = require("./class.eatgrass");
+Gishatich = require("./class.predator");
+gishatich1 = require("./class.gish1");
+Anhetacox = require("./class.anhet");
 for (var y = 0; y < 40; y++) {
     matrix[y] = [];
     for (var x = 0; x < 40; x++) {
@@ -50,29 +56,29 @@ for (var x = 0; x < 15; x++) {
 setInterval(function(){draw()},1000);
 function draw()
 {
-io.sockets.emit("mess",matrix);
+io.sockets.emit("mish", matrix);
  for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
             if (matrix[y][x] == 1) {
                 var xot = new Grass(x, y);
                 grassArr.push(xot);
             }
-            // else if (matrix[y][x] == 2) {
-            //     var xot = new Xotaker(x, y);
-            //     xotakerArr.push(xot);
-            // }
-            // else if (matrix[y][x] == 3) {
-            //     var xot = new Gishatich(x, y);
-            //     gishatichArr.push(xot);
-            // }
-            // else if (matrix[y][x] == 4) {
-            //     var xot = new gishatich1(x, y);
-            //     gish1Arr.push(xot);
-            // }
-            //   else if (matrix[y][x] == 5) {
-            //     var xot = new Anhetacox(x, y);
-            //     anhetacoxArr.push(xot);
-            // }
+            else if (matrix[y][x] == 2) {
+                var xot = new Xotaker(x, y);
+                xotakerArr.push(xot);
+            }
+            else if (matrix[y][x] == 3) {
+                var xot = new Gishatich(x, y);
+                gishatichArr.push(xot);
+            }
+            else if (matrix[y][x] == 4) {
+                var xot = new gishatich1(x, y);
+                gish1Arr.push(xot);
+            }
+              else if (matrix[y][x] == 5) {
+                var xot = new Anhetacox(x, y);
+                anhetacoxArr.push(xot);
+            }
         }
     }
 
@@ -107,5 +113,4 @@ io.sockets.emit("mess",matrix);
         
 
     }
-    conole.log(matrix);
 }

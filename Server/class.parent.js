@@ -27,7 +27,7 @@ module.exports = class LivingCreature {
         }
         return found;
     }
-    yntrelRandom(rand){
+    choose(rand){
         return rand[Math.floor((Math.random() * rand.length))];
     }
 

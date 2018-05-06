@@ -1,3 +1,4 @@
+var LivingCreature = require("./class.parent");
 module.exports = class Gishatich extends LivingCreature{
     constructor(x, y, energy) {
         super(x,y);
@@ -18,8 +19,8 @@ module.exports = class Gishatich extends LivingCreature{
 
 
     sharjvel() {
-        var norVandak2 = random(this.yntrelVandak(0));
-        var norVandak3 = random(this.yntrelVandak(1));
+        var norVandak2 = this.choose(this.yntrelVandak(0));
+        var norVandak3 = this.choose(this.yntrelVandak(1));
 
         if (norVandak2) {
             matrix[this.y][this.x] = 0;
@@ -47,7 +48,7 @@ module.exports = class Gishatich extends LivingCreature{
     utel() {
         this.stanalNorKordinatner();
 
-        var norVandak3 = random(this.yntrelVandak(2));
+        var norVandak3 = this.choose(this.yntrelVandak(2));
 
 
         if (norVandak3) {
