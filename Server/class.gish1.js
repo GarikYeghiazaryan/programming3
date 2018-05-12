@@ -106,6 +106,7 @@ module.exports =  class gishatich1 extends LivingCreature {
 
 
     }
+  
 
     mahanal() {
         for (var i in gish1Arr) {
@@ -114,7 +115,9 @@ module.exports =  class gishatich1 extends LivingCreature {
                 gish1Arr.splice(i, 1);
 
             }
+       
         }
+
     }
 
 
