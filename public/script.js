@@ -1,3 +1,4 @@
+var socket = io.connect('http://localhost:3000');
 
 var side = 10;
 
@@ -5,13 +6,12 @@ var side = 10;
 
  
 function setup() {
-    frameRate(5);
+    frameRate(4);
     createCanvas(400,400);
     background('#acacac');
    
 }
 
-var socket = io.connect('http://localhost:3000');
 
 socket.on("mish", function (matrix) {
 

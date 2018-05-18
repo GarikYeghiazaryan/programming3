@@ -2,7 +2,7 @@ var LivingCreature = require("./class.parent");
 module.exports = class Gishatich extends LivingCreature{
     constructor(x, y, energy) {
         super(x,y);
-        this.energy = energy;
+        this.energy = 5;
     }
     stanalNorKordinatner() {
         this.directions = [
@@ -72,6 +72,7 @@ module.exports = class Gishatich extends LivingCreature{
 
 
     }
+ 
     mahanal() {
         for (var i in gishatichArr) {
             if (gishatichArr[i].energy <= 0) {

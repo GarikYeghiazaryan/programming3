@@ -16,12 +16,12 @@ server.listen(process.env.PORT || 3000, function(){
 // console.log(matrix);
 
 //sad
-global.matrix = [];
-global.grassArr = [];
-global.gish1Arr = [];
-global.anhetacoxArr = [];
-global.gishatichArr = [];
-global.xotakerArr = [];
+matrix = [];
+grassArr = [];
+gish1Arr = [];
+anhetacoxArr = [];
+gishatichArr = [];
+xotakerArr = [];
 
 Grass = require("./class.grass");
 Xotaker = require("./class.eatgrass");

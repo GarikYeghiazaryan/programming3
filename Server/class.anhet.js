@@ -38,6 +38,7 @@ module.exports = class Anhetacox extends LivingCreature {
             }
         }
     }
+      
 
 
 

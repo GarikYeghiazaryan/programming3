@@ -2,6 +2,7 @@ var LivingCreature = require("./class.parent");
 module.exports =  class gishatich1 extends LivingCreature {
     constructor(x, y, energy) {
         super(x,y);
+        this.energy = 5;
 
 
     }
@@ -106,11 +107,11 @@ module.exports =  class gishatich1 extends LivingCreature {
 
 
     }
-  
+        
 
     mahanal() {
         for (var i in gish1Arr) {
-            if (grassArr.length == 0) {
+            if (gish1Arr[i].energy <= 0){
                 matrix[this.y][this.x] = 0;
                 gish1Arr.splice(i, 1);
 
@@ -118,6 +119,7 @@ module.exports =  class gishatich1 extends LivingCreature {
        
         }
 
+  
     }
 
 
