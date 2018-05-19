@@ -1,17 +1,19 @@
 var express = require("express");
 var app = express();
-var server = require("http").Server(app);
+var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
 app.use(express.static("../public"));
 
 app.get("/", function(req, res){
-   res.redirect("index.html");
+   res.redirect("/public/index.html");
 });
 
 server.listen(process.env.PORT || 3000, function(){
    console.log("Example is running on port 3000");
 });
+
+
 
 // console.log(matrix);
 
@@ -23,11 +25,11 @@ anhetacoxArr = [];
 gishatichArr = [];
 xotakerArr = [];
 
-Grass = require("./class.grass");
-Xotaker = require("./class.eatgrass");
-Gishatich = require("./class.predator");
-gishatich1 = require("./class.gish1");
-Anhetacox = require("./class.anhet");
+Grass = require("./class.grass.js");
+Xotaker = require("./class.eatgrass.js");
+Gishatich = require("./class.predator.js");
+gishatich1 = require("./class.gish1.js");
+Anhetacox = require("./class.anhet.js");
 for (var y = 0; y < 40; y++) {
     matrix[y] = [];
     for (var x = 0; x < 40; x++) {
@@ -56,7 +58,7 @@ for (var x = 0; x < 15; x++) {
 setInterval(function(){draw()},1000);
 function draw()
 {
-io.sockets.emit("mish", matrix);
+
  for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
             if (matrix[y][x] == 1) {
@@ -113,4 +115,7 @@ io.sockets.emit("mish", matrix);
         
 
     }
+   
+    io.sockets.emit("mish", matrix);
 }
+    

@@ -25,7 +25,7 @@ module.exports =  class Grass extends LivingCreature {
         this.multiply++;
         var norVandak = this.choose(this.yntrelVandak(0));
 
-        if (norVandak && this.multiply >= 1) {
+        if (norVandak && this.multiply >= 2) {
             var norXot = new Grass(norVandak[0], norVandak[1]);
             grassArr.push(norXot);
             matrix[norVandak[1]][norVandak[0]] = 1;

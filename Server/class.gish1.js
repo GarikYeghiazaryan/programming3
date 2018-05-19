@@ -50,8 +50,8 @@ module.exports =  class gishatich1 extends LivingCreature {
 
 
         this.NorKordinatner();
-        var norVandak2 = this.choose(this.yntrelVandak(3));
         var norVandak1 = this.choose(this.yntrelVandak(2));
+        var norVandak2 = this.choose(this.yntrelVandak(3));
         var norVandak3 = this.choose(this.yntrelVandak(1));
         var norVandak4 = this.choose(this.yntrelVandak(5));
 
@@ -69,7 +69,7 @@ module.exports =  class gishatich1 extends LivingCreature {
 
             }
         }
-        if (norVandak2) {
+        else if (norVandak2) {
             matrix[this.y][this.x] = 0;
             this.y = norVandak2[1];
             this.x = norVandak2[0];
@@ -82,7 +82,7 @@ module.exports =  class gishatich1 extends LivingCreature {
 
             }
         }
-        if (norVandak1) {
+        else if (norVandak1) {
             matrix[this.y][this.x] = 0;
             this.y = norVandak1[1];
             this.x = norVandak1[0];
@@ -107,7 +107,7 @@ module.exports =  class gishatich1 extends LivingCreature {
 
 
     }
-        
+    
 
     mahanal() {
         for (var i in gish1Arr) {
